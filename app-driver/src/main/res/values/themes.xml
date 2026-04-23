@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.FleetDriver.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/driver_splash_bg</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_driver_splash</item>
+        <item name="postSplashScreenTheme">@style/Theme.FleetDriver</item>
+    </style>
+
+    <style name="Theme.FleetDriver" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/fleet_primary</item>
+        <item name="colorSecondary">@color/fleet_secondary</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/fleet_primary</item>
+    </style>
+</resources>

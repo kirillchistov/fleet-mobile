@@ -1,0 +1,5 @@
+<resources>
+    <color name="manager_splash_bg">#123A6B</color>
+    <color name="manager_icon_bg">#123A6B</color>
+    <color name="manager_icon_fg">#FFFFFF</color>
+</resources>

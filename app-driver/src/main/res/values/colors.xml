@@ -1,0 +1,5 @@
+<resources>
+    <color name="driver_splash_bg">#1F6A4C</color>
+    <color name="driver_icon_bg">#1F6A4C</color>
+    <color name="driver_icon_fg">#FFFFFF</color>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="@color/driver_icon_fg"
+        android:pathData="M28,78 L28,30 L52,30 C66,30 76,40 76,54 C76,68 66,78 52,78 Z M40,66 L52,66 C59,66 64,61 64,54 C64,47 59,42 52,42 L40,42 Z" />
+</vector>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="@color/manager_icon_fg"
+        android:pathData="M24,78 L24,30 L36,30 L54,54 L72,30 L84,30 L84,78 L72,78 L72,49 L57,69 L51,69 L36,49 L36,78 Z" />
+</vector>
