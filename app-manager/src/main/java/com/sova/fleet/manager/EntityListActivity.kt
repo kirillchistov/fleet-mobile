@@ -61,6 +61,7 @@ class EntityListActivity : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.fabAddEntity).setOnClickListener { openFormDialog(null) }
         findViewById<MaterialButton>(R.id.addTopButton).setOnClickListener { openFormDialog(null) }
         findViewById<MaterialButton>(R.id.addBottomButton).setOnClickListener { openFormDialog(null) }
+        bindBottomNavigation()
         findViewById<TextView>(R.id.entitiesTitle).apply {
             isSingleLine = true
             ellipsize = android.text.TextUtils.TruncateAt.END
@@ -72,6 +73,21 @@ class EntityListActivity : AppCompatActivity() {
             ManagerEntityType.USERS -> getString(R.string.add_user)
         }
         render()
+    }
+
+    private fun bindBottomNavigation() {
+        findViewById<LinearLayout>(R.id.navVehicles).setOnClickListener { navigateToType(ManagerEntityType.VEHICLES) }
+        findViewById<LinearLayout>(R.id.navUsers).setOnClickListener { navigateToType(ManagerEntityType.USERS) }
+        findViewById<LinearLayout>(R.id.navService).setOnClickListener { navigateToType(ManagerEntityType.FLEETS) }
+    }
+
+    private fun navigateToType(target: ManagerEntityType) {
+        if (type == target) return
+        startActivity(
+            Intent(this, EntityListActivity::class.java)
+                .putExtra(EXTRA_ENTITY_TYPE, target.name),
+        )
+        finish()
     }
 
     private fun setupVehicleFilters() {

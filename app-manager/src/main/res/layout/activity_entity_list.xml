@@ -163,6 +163,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
+            android:id="@+id/navVehicles"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -185,6 +186,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/navUsers"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -194,7 +196,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/bottom_nav_charge_icon"
+                android:text="@string/bottom_nav_users_icon"
                 android:textColor="@color/fleet_muted_fg"
                 android:textSize="20sp" />
 
@@ -202,11 +204,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="@string/bottom_nav_charge"
+                android:text="@string/bottom_nav_users"
                 android:textAppearance="@style/TextAppearance.Fleet.Caption" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/navService"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -216,7 +219,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/bottom_nav_help_icon"
+                android:text="@string/bottom_nav_service_icon"
                 android:textColor="@color/fleet_muted_fg"
                 android:textSize="20sp" />
 
@@ -224,7 +227,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="@string/bottom_nav_help"
+                android:text="@string/bottom_nav_service"
                 android:textAppearance="@style/TextAppearance.Fleet.Caption" />
         </LinearLayout>
     </LinearLayout>

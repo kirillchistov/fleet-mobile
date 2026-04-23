@@ -45,9 +45,10 @@
     <string name="alerts">Уведомления</string>
     <string name="filter_button">Фильтры</string>
     <string name="bottom_nav_vehicles">Автомобили</string>
-    <string name="bottom_nav_charge">Зарядка</string>
-    <string name="bottom_nav_help">Справка</string>
+    <string name="bottom_nav_users">Водители</string>
+    <string name="bottom_nav_service">Сервис</string>
     <string name="bottom_nav_truck_icon">🚚</string>
-    <string name="bottom_nav_charge_icon">🔌</string>
-    <string name="bottom_nav_help_icon">❔</string>
+    <string name="bottom_nav_users_icon">👤</string>
+    <string name="bottom_nav_service_icon">🔧</string>
+    <string name="details_entity">Подробнее</string>
 </resources>

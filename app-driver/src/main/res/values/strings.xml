@@ -5,4 +5,8 @@
     <string name="next_button">Далее</string>
     <string name="next_placeholder_message">Экран-заглушка спринта 1</string>
     <string name="footer_hint">Sova Fleet • Sprint 1</string>
+    <string name="bottom_nav_vehicles">Автомобили</string>
+    <string name="bottom_nav_driver_charging">Зарядки</string>
+    <string name="bottom_nav_driver_help">Помощь</string>
+    <string name="driver_section_placeholder">Раздел в разработке. Навигация уже подключена.</string>
 </resources>

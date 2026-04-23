@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import com.google.android.material.button.MaterialButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -42,7 +43,8 @@ class VehicleCardAdapter(
         private val status = itemView.findViewById<TextView>(R.id.vehicleStatus)
         private val fleet = itemView.findViewById<TextView>(R.id.vehicleFleet)
         private val editButton = itemView.findViewById<ImageButton>(R.id.btnEdit)
-        private val deleteButton = itemView.findViewById<TextView>(R.id.btnDelete)
+        private val deleteButton = itemView.findViewById<ImageButton>(R.id.btnDelete)
+        private val detailsButton = itemView.findViewById<MaterialButton>(R.id.btnDetails)
 
         fun bind(item: Vehicle) {
             title.text = item.model
@@ -51,6 +53,7 @@ class VehicleCardAdapter(
             fleet.text = "Парк: ${ManagerRepository.fleetName(item.fleetId)}"
 
             itemView.setOnClickListener { onOpen(item.id) }
+            detailsButton.setOnClickListener { onOpen(item.id) }
             editButton.setOnClickListener { onEdit(item.id) }
             deleteButton.setOnClickListener { onDelete(item.id) }
         }

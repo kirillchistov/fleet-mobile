@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_fleet_screen"
+    android:padding="@dimen/fleet_screen_padding">
+
+    <ImageView
+        android:id="@+id/logoSignTop"
+        android:layout_width="@dimen/fleet_logo_sign_width"
+        android:layout_height="@dimen/fleet_logo_sign_height"
+        android:contentDescription="@string/fleet_logo_sign_content_description"
+        android:src="@drawable/ic_logo_sign"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/contentTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="@string/bottom_nav_vehicles"
+        android:textAppearance="@style/TextAppearance.Fleet.Title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logoSignTop" />
+
+    <TextView
+        android:id="@+id/contentHint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/driver_section_placeholder"
+        android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contentTitle" />
+
+    <LinearLayout
+        android:id="@+id/bottomNavBar"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_fleet_card"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/navVehicles"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/bottom_nav_vehicles"
+            android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+
+        <TextView
+            android:id="@+id/navCharging"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/bottom_nav_driver_charging"
+            android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+
+        <TextView
+            android:id="@+id/navHelp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/bottom_nav_driver_help"
+            android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

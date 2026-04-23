@@ -10,6 +10,7 @@
         android:id="@+id/detailsHeader"
         android:layout_width="match_parent"
         android:layout_height="44dp"
+        android:layout_marginTop="14dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -23,13 +24,14 @@
             android:tint="@color/fleet_fg" />
 
         <TextView
-            android:id="@+id/detailsHeaderTitle"
+            android:id="@+id/detailsTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/vehicle_info_title"
-            android:textAppearance="@style/TextAppearance.Fleet.Subtitle" />
+            android:layout_marginStart="8dp"
+            android:gravity="start|center_vertical"
+            android:textAppearance="@style/TextAppearance.Fleet.Title"
+                android:textColor="@color/fleet_fg" />
 
         <View
             android:layout_width="36dp"
@@ -47,17 +49,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/detailsTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textAppearance="@style/TextAppearance.Fleet.Title" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/fleet_spacing_sm"
+                android:layout_marginTop="12dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -65,7 +60,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textAppearance="@style/TextAppearance.Fleet.Subtitle" />
+                    android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
+                    android:lineSpacingExtra="2dp" />
 
                 <ImageView
                     android:id="@+id/vehicleImage"
@@ -81,7 +77,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/fleet_spacing_lg"
                 android:text="@string/documents_title"
-                android:textAppearance="@style/TextAppearance.Fleet.Subtitle" />
+                    android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
+                    android:textColor="@color/fleet_fg" />
 
             <HorizontalScrollView
                 android:id="@+id/documentsRow"
@@ -102,16 +99,26 @@
                         android:orientation="vertical"
                         android:padding="14dp">
 
-                        <TextView
+                        <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="СТС"
-                            android:textAppearance="@style/TextAppearance.Fleet.Subtitle" />
+                            android:background="@drawable/bg_doc_icon_yellow"
+                            android:padding="8dp"
+                            android:src="@android:drawable/ic_menu_edit"
+                            android:tint="@android:color/white" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
+                            android:text="СТС"
+                            android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
+                            android:textColor="@color/fleet_fg" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
                             android:text="99 23 №668447"
                             android:textAppearance="@style/TextAppearance.Fleet.Caption" />
                     </LinearLayout>
@@ -124,16 +131,26 @@
                         android:orientation="vertical"
                         android:padding="14dp">
 
-                        <TextView
+                        <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="ОСАГО"
-                            android:textAppearance="@style/TextAppearance.Fleet.Subtitle" />
+                            android:background="@drawable/bg_doc_icon_green"
+                            android:padding="8dp"
+                            android:src="@android:drawable/ic_menu_edit"
+                            android:tint="@android:color/white" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
+                            android:text="ОСАГО"
+                            android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
+                            android:textColor="@color/fleet_fg" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
                             android:text="Действует"
                             android:textAppearance="@style/TextAppearance.Fleet.Caption" />
                     </LinearLayout>
@@ -146,16 +163,26 @@
                         android:orientation="vertical"
                         android:padding="14dp">
 
-                        <TextView
+                        <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Каско"
-                            android:textAppearance="@style/TextAppearance.Fleet.Subtitle" />
+                            android:background="@drawable/bg_doc_icon_purple"
+                            android:padding="8dp"
+                            android:src="@android:drawable/ic_menu_edit"
+                            android:tint="@android:color/white" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
+                            android:text="Каско"
+                            android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
+                            android:textColor="@color/fleet_fg" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
                             android:text="Действует"
                             android:textAppearance="@style/TextAppearance.Fleet.Caption" />
                     </LinearLayout>
@@ -182,7 +209,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/menu_specs"
-                        android:textAppearance="@style/TextAppearance.Fleet.Subtitle" />
+                            android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
+                            android:textColor="@color/fleet_fg" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -190,6 +218,11 @@
                         android:text="@string/chevron_right"
                         android:textAppearance="@style/TextAppearance.Fleet.Subtitle" />
                 </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/fleet_border" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -202,7 +235,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/menu_manual"
-                        android:textAppearance="@style/TextAppearance.Fleet.Subtitle" />
+                            android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
+                            android:textColor="@color/fleet_fg" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -210,6 +244,11 @@
                         android:text="@string/chevron_right"
                         android:textAppearance="@style/TextAppearance.Fleet.Subtitle" />
                 </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/fleet_border" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -222,7 +261,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/menu_service_contract"
-                        android:textAppearance="@style/TextAppearance.Fleet.Subtitle" />
+                            android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
+                            android:textColor="@color/fleet_fg" />
 
                     <TextView
                         android:layout_width="wrap_content"
