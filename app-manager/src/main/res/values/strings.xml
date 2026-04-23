@@ -17,4 +17,8 @@
     <string name="open_fleets_list">Открыть список автопарков</string>
     <string name="open_companies_list">Открыть список компаний</string>
     <string name="open_users_list">Открыть список пользователей</string>
+    <string name="open_related">Открыть связанные данные</string>
+    <string name="search_hint">Поиск</string>
+    <string name="filter_all_statuses">Все статусы</string>
+    <string name="vehicle_docs_and_specs">Документы и техническая информация</string>
 </resources>

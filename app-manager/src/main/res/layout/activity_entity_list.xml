@@ -36,6 +36,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/topSystemInsetGuideline" />
 
+    <LinearLayout
+        android:id="@+id/vehiclesFilterRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fleet_spacing_sm"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/entitiesTitle">
+
+        <EditText
+            android:id="@+id/searchInput"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_fleet_card"
+            android:hint="@string/search_hint"
+            android:paddingHorizontal="12dp"
+            android:textColor="@color/fleet_fg"
+            android:textColorHint="@color/fleet_muted_fg" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/statusFilterButton"
+            style="@style/Widget.Fleet.PrimaryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/filter_all_statuses" />
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/entitiesRecycler"
         android:layout_width="0dp"
@@ -44,7 +77,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/entitiesTitle" />
+        app:layout_constraintTop_toBottomOf="@id/vehiclesFilterRow" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddEntity"
