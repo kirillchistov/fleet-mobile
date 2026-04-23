@@ -29,12 +29,31 @@
         android:id="@+id/entitiesTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/fleet_spacing_lg"
+        android:layout_marginTop="6dp"
         android:gravity="center"
         android:textAppearance="@style/TextAppearance.Fleet.Title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/topSystemInsetGuideline" />
+
+    <LinearLayout
+        android:id="@+id/topListActions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fleet_spacing_sm"
+        android:gravity="end"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/entitiesTitle">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addTopButton"
+            style="@style/Widget.Fleet.PrimaryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_button_title" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/vehiclesFilterRow"
@@ -45,7 +64,7 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/entitiesTitle">
+        app:layout_constraintTop_toBottomOf="@id/topListActions">
 
         <EditText
             android:id="@+id/searchInput"
@@ -73,7 +92,7 @@
         android:id="@+id/entitiesRecycler"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/fleet_spacing_lg"
+        android:layout_marginTop="@dimen/fleet_spacing_sm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,6 +104,7 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/add_entity"
         android:src="@android:drawable/ic_input_add"
+        android:visibility="gone"
         app:backgroundTint="@color/fleet_primary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

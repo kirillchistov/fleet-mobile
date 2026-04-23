@@ -1,35 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/bg_fleet_card"
     android:orientation="vertical"
-    android:paddingTop="8dp">
+    android:padding="16dp">
 
-    <EditText
-        android:id="@+id/inputA"
+    <TextView
+        android:id="@+id/dialogTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text" />
+        android:textAppearance="@style/TextAppearance.Fleet.Subtitle" />
 
-    <EditText
-        android:id="@+id/inputB"
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:boxBackgroundColor="@color/fleet_secondary"
+        app:boxStrokeColor="@color/fleet_border"
+        app:hintTextColor="@color/fleet_muted_fg">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="@color/fleet_fg"
+            android:textColorHint="@color/fleet_muted_fg" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:inputType="text" />
+        app:boxBackgroundColor="@color/fleet_secondary"
+        app:boxStrokeColor="@color/fleet_border"
+        app:hintTextColor="@color/fleet_muted_fg">
 
-    <EditText
-        android:id="@+id/inputC"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="@color/fleet_fg"
+            android:textColorHint="@color/fleet_muted_fg" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:inputType="text" />
+        app:boxBackgroundColor="@color/fleet_secondary"
+        app:boxStrokeColor="@color/fleet_border"
+        app:hintTextColor="@color/fleet_muted_fg">
 
-    <EditText
-        android:id="@+id/inputD"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="@color/fleet_fg"
+            android:textColorHint="@color/fleet_muted_fg" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:inputType="text" />
+        app:boxBackgroundColor="@color/fleet_secondary"
+        app:boxStrokeColor="@color/fleet_border"
+        app:hintTextColor="@color/fleet_muted_fg">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="@color/fleet_fg"
+            android:textColorHint="@color/fleet_muted_fg" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCancelDialog"
+            style="@style/Widget.Fleet.PrimaryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/fleet_secondary"
+            android:text="@string/cancel" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSaveDialog"
+            style="@style/Widget.Fleet.PrimaryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/save" />
+    </LinearLayout>
 
 </LinearLayout>

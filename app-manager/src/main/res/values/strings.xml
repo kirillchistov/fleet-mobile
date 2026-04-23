@@ -21,4 +21,7 @@
     <string name="search_hint">Поиск</string>
     <string name="filter_all_statuses">Все статусы</string>
     <string name="vehicle_docs_and_specs">Документы и техническая информация</string>
+    <string name="cancel">Отмена</string>
+    <string name="save">Сохранить</string>
+    <string name="add_button_title">+ Добавить</string>
 </resources>

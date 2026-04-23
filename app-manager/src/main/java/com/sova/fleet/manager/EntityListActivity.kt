@@ -5,6 +5,7 @@ import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.Button
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
@@ -57,6 +58,7 @@ class EntityListActivity : AppCompatActivity() {
         }
 
         findViewById<FloatingActionButton>(R.id.fabAddEntity).setOnClickListener { openFormDialog(null) }
+        findViewById<MaterialButton>(R.id.addTopButton).setOnClickListener { openFormDialog(null) }
         render()
     }
 
@@ -129,10 +131,15 @@ class EntityListActivity : AppCompatActivity() {
 
     private fun openFormDialog(id: String?) {
         val view = LayoutInflater.from(this).inflate(R.layout.dialog_entity_form, null)
+        val titleView = view.findViewById<TextView>(R.id.dialogTitle)
         val inputA = view.findViewById<EditText>(R.id.inputA)
         val inputB = view.findViewById<EditText>(R.id.inputB)
         val inputC = view.findViewById<EditText>(R.id.inputC)
         val inputD = view.findViewById<EditText>(R.id.inputD)
+        val cancelButton = view.findViewById<Button>(R.id.btnCancelDialog)
+        val saveButton = view.findViewById<Button>(R.id.btnSaveDialog)
+
+        titleView.text = if (id == null) getString(R.string.add_entity) else getString(R.string.edit_entity)
 
         when (type) {
             ManagerEntityType.VEHICLES -> {
@@ -173,21 +180,21 @@ class EntityListActivity : AppCompatActivity() {
             }
         }
 
-        AlertDialog.Builder(this)
-            .setTitle(if (id == null) "Добавить" else "Редактировать")
-            .setView(view)
-            .setNegativeButton("Отмена", null)
-            .setPositiveButton("Сохранить") { _, _ ->
-                val a = inputA.text.toString().trim()
-                val b = inputB.text.toString().trim()
-                val c = inputC.text.toString().trim()
-                val d = inputD.text.toString().trim()
-                if (a.isNotEmpty() && b.isNotEmpty() && c.isNotEmpty()) {
-                    upsertEntity(id, a, b, c, d)
-                    render()
-                }
+        val dialog = AlertDialog.Builder(this).setView(view).create()
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        cancelButton.setOnClickListener { dialog.dismiss() }
+        saveButton.setOnClickListener {
+            val a = inputA.text.toString().trim()
+            val b = inputB.text.toString().trim()
+            val c = inputC.text.toString().trim()
+            val d = inputD.text.toString().trim()
+            if (a.isNotEmpty() && b.isNotEmpty() && c.isNotEmpty()) {
+                upsertEntity(id, a, b, c, d)
+                render()
+                dialog.dismiss()
             }
-            .show()
+        }
+        dialog.show()
     }
 
     private fun upsertEntity(id: String?, a: String, b: String, c: String, d: String) {
