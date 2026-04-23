@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.Button
+import android.widget.LinearLayout
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
@@ -59,6 +60,17 @@ class EntityListActivity : AppCompatActivity() {
 
         findViewById<FloatingActionButton>(R.id.fabAddEntity).setOnClickListener { openFormDialog(null) }
         findViewById<MaterialButton>(R.id.addTopButton).setOnClickListener { openFormDialog(null) }
+        findViewById<MaterialButton>(R.id.addBottomButton).setOnClickListener { openFormDialog(null) }
+        findViewById<TextView>(R.id.entitiesTitle).apply {
+            isSingleLine = true
+            ellipsize = android.text.TextUtils.TruncateAt.END
+        }
+        findViewById<MaterialButton>(R.id.addBottomButton).text = when (type) {
+            ManagerEntityType.VEHICLES -> getString(R.string.add_vehicle)
+            ManagerEntityType.FLEETS -> getString(R.string.add_fleet)
+            ManagerEntityType.COMPANIES -> getString(R.string.add_company)
+            ManagerEntityType.USERS -> getString(R.string.add_user)
+        }
         render()
     }
 
@@ -72,7 +84,6 @@ class EntityListActivity : AppCompatActivity() {
 
         val searchInput = findViewById<EditText>(R.id.searchInput)
         val statusButton = findViewById<MaterialButton>(R.id.statusFilterButton)
-        statusButton.text = statusFilter
         statusButton.setOnClickListener { openStatusFilterDialog() }
 
         searchInput.addTextChangedListener(object : TextWatcher {
@@ -86,15 +97,22 @@ class EntityListActivity : AppCompatActivity() {
     }
 
     private fun openStatusFilterDialog() {
-        val options = arrayOf("Все статусы", "В пути", "Стоянка", "Сервис")
-        AlertDialog.Builder(this)
-            .setTitle("Фильтр статуса")
-            .setItems(options) { _, index ->
-                statusFilter = options[index]
-                findViewById<MaterialButton>(R.id.statusFilterButton).text = statusFilter
-                render()
-            }
-            .show()
+        val view = LayoutInflater.from(this).inflate(R.layout.dialog_status_filter, null) as LinearLayout
+        val dialog = AlertDialog.Builder(this).setView(view).create()
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+        fun applyFilter(value: String) {
+            statusFilter = value
+            render()
+            dialog.dismiss()
+        }
+
+        view.findViewById<TextView>(R.id.optionAll).setOnClickListener { applyFilter(getString(R.string.filter_all_statuses)) }
+        view.findViewById<TextView>(R.id.optionInTransit).setOnClickListener { applyFilter(getString(R.string.status_in_transit)) }
+        view.findViewById<TextView>(R.id.optionParking).setOnClickListener { applyFilter(getString(R.string.status_parking)) }
+        view.findViewById<TextView>(R.id.optionService).setOnClickListener { applyFilter(getString(R.string.status_service)) }
+
+        dialog.show()
     }
 
     private fun render() {

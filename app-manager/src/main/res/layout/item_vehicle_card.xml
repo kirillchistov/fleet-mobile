@@ -16,9 +16,9 @@
             android:layout_width="84dp"
             android:layout_height="56dp"
             android:background="@drawable/bg_fleet_screen"
-            android:padding="8dp"
-            android:src="@android:drawable/ic_menu_compass"
-            android:tint="@color/fleet_fg" />
+            android:padding="6dp"
+            android:src="@android:drawable/ic_menu_gallery"
+            android:scaleType="centerCrop" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -31,6 +31,8 @@
                 android:id="@+id/vehicleTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:textAppearance="@style/TextAppearance.Fleet.Subtitle" />
 
             <TextView
@@ -59,7 +61,7 @@
             android:id="@+id/btnEdit"
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:background="@drawable/bg_fleet_screen"
+            android:background="@drawable/bg_fleet_card"
             android:contentDescription="@string/edit_entity"
             android:src="@android:drawable/ic_menu_edit"
             android:tint="@color/fleet_primary" />

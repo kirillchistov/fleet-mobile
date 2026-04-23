@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_fleet_card"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/filterDialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/status_filter_title"
+        android:textAppearance="@style/TextAppearance.Fleet.Subtitle" />
+
+    <TextView
+        android:id="@+id/optionAll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/bg_fleet_screen"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="10dp"
+        android:text="@string/filter_all_statuses"
+        android:textAppearance="@style/TextAppearance.Fleet.Subtitle" />
+
+    <TextView
+        android:id="@+id/optionInTransit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_fleet_screen"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="10dp"
+        android:text="@string/status_in_transit"
+        android:textAppearance="@style/TextAppearance.Fleet.Subtitle" />
+
+    <TextView
+        android:id="@+id/optionParking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_fleet_screen"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="10dp"
+        android:text="@string/status_parking"
+        android:textAppearance="@style/TextAppearance.Fleet.Subtitle" />
+
+    <TextView
+        android:id="@+id/optionService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_fleet_screen"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="10dp"
+        android:text="@string/status_service"
+        android:textAppearance="@style/TextAppearance.Fleet.Subtitle" />
+</LinearLayout>

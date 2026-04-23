@@ -25,34 +25,66 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5" />
 
-    <TextView
-        android:id="@+id/entitiesTitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:gravity="center"
-        android:textAppearance="@style/TextAppearance.Fleet.Title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topSystemInsetGuideline" />
-
     <LinearLayout
-        android:id="@+id/topListActions"
+        android:id="@+id/topHeaderRow"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/fleet_spacing_sm"
-        android:gravity="end"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/entitiesTitle">
+        app:layout_constraintTop_toBottomOf="@id/topSystemInsetGuideline">
+
+        <ImageButton
+            android:id="@+id/menuButton"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_fleet_card"
+            android:contentDescription="@string/menu"
+            android:src="@android:drawable/ic_menu_sort_by_size"
+            android:tint="@color/fleet_fg" />
+
+        <TextView
+            android:id="@+id/entitiesTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/fleet_fg" />
+
+        <ImageButton
+            android:id="@+id/alertsButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_icon_outline_white"
+            android:contentDescription="@string/alerts"
+            android:src="@android:drawable/ic_dialog_info"
+            android:padding="0dp"
+            android:tint="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/addTopButton"
-            style="@style/Widget.Fleet.PrimaryButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/add_button_title" />
+            style="@style/Widget.Fleet.OutlinedIconButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:padding="0dp"
+            app:backgroundTint="@android:color/white"
+            app:strokeColor="@android:color/white"
+            android:textColor="@color/fleet_bg"
+            android:textSize="28sp"
+            android:text="@string/add_icon_title" />
     </LinearLayout>
 
     <LinearLayout
@@ -64,7 +96,7 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topListActions">
+        app:layout_constraintTop_toBottomOf="@id/topHeaderRow">
 
         <EditText
             android:id="@+id/searchInput"
@@ -79,13 +111,20 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/statusFilterButton"
-            style="@style/Widget.Fleet.PrimaryButton"
-            android:layout_width="wrap_content"
+            style="@style/Widget.Fleet.OutlinedIconButton"
+            android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
             android:insetTop="0dp"
             android:insetBottom="0dp"
-            android:text="@string/filter_all_statuses" />
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:padding="0dp"
+            android:text=""
+            android:icon="@android:drawable/ic_menu_manage"
+            android:contentDescription="@string/filter_button" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -93,10 +132,102 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/fleet_spacing_sm"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/addBottomButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/vehiclesFilterRow" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addBottomButton"
+        style="@style/Widget.Fleet.PrimaryButton"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="@dimen/fleet_spacing_sm"
+        android:text="@string/add_entity"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/bottomNavBar"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_fleet_card"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bottom_nav_truck_icon"
+                android:textColor="@color/fleet_primary"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/bottom_nav_vehicles"
+                android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bottom_nav_charge_icon"
+                android:textColor="@color/fleet_muted_fg"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/bottom_nav_charge"
+                android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bottom_nav_help_icon"
+                android:textColor="@color/fleet_muted_fg"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/bottom_nav_help"
+                android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+        </LinearLayout>
+    </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddEntity"
