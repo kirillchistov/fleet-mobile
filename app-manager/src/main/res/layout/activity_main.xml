@@ -3,29 +3,160 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:background="@drawable/bg_fleet_screen"
+    android:padding="@dimen/fleet_screen_padding">
 
-    <TextView
-        android:id="@+id/titleText"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topSystemInsetGuideline"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/manager_title"
-        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="@dimen/fleet_system_top_inset" />
+
+    <ImageView
+        android:id="@+id/logoSignTop"
+        android:layout_width="@dimen/fleet_logo_sign_width"
+        android:layout_height="@dimen/fleet_logo_sign_height"
+        android:contentDescription="@string/fleet_logo_sign_content_description"
+        android:src="@drawable/ic_logo_sign"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35" />
+        app:layout_constraintBottom_toBottomOf="@id/topSystemInsetGuideline"
+        app:layout_constraintVertical_bias="0.5" />
 
-    <Button
-        android:id="@+id/btnNext"
+    <LinearLayout
+        android:id="@+id/mainCard"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/next_button"
+        android:background="@drawable/bg_fleet_card"
+        android:orientation="vertical"
+        android:padding="@dimen/fleet_card_padding"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleText"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/manager_dashboard_title"
+            android:textAppearance="@style/TextAppearance.Fleet.Title" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fleet_spacing_lg"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/kpi_vehicles"
+                android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/kpi_fleets"
+                android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/kpi_companies"
+                android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/kpi_users"
+                android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <TextView
+                android:id="@+id/kpiVehicles"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.Fleet.Title" />
+
+            <TextView
+                android:id="@+id/kpiFleets"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.Fleet.Title" />
+
+            <TextView
+                android:id="@+id/kpiCompanies"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.Fleet.Title" />
+
+            <TextView
+                android:id="@+id/kpiUsers"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.Fleet.Title" />
+        </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnVehicles"
+                style="@style/Widget.Fleet.PrimaryButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fleet_spacing_lg"
+                android:text="@string/open_vehicles_list" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFleets"
+                style="@style/Widget.Fleet.PrimaryButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fleet_spacing_sm"
+                android:text="@string/open_fleets_list" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCompanies"
+                style="@style/Widget.Fleet.PrimaryButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fleet_spacing_sm"
+                android:text="@string/open_companies_list" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnUsers"
+                style="@style/Widget.Fleet.PrimaryButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fleet_spacing_sm"
+                android:text="@string/open_users_list" />
+        </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

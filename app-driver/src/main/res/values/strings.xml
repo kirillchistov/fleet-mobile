@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Fleet Driver</string>
     <string name="driver_title">Водитель</string>
+    <string name="driver_subtitle">Быстрый доступ к состоянию ТС, зарядке и сервису</string>
     <string name="next_button">Далее</string>
     <string name="next_placeholder_message">Экран-заглушка спринта 1</string>
+    <string name="footer_hint">Sova Fleet • Sprint 1</string>
 </resources>

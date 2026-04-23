@@ -1,6 +1,20 @@
 <resources>
     <string name="app_name">Fleet Manager</string>
     <string name="manager_title">Управление парком</string>
+    <string name="manager_subtitle">Контроль ТС, водителей и сервисных событий</string>
+    <string name="manager_dashboard_title">Дашборд</string>
     <string name="next_button">Далее</string>
     <string name="next_placeholder_message">Экран-заглушка спринта 1</string>
+    <string name="footer_hint">Sova Fleet • Sprint 1</string>
+    <string name="kpi_vehicles">Авто</string>
+    <string name="kpi_fleets">Парки</string>
+    <string name="kpi_companies">Компании</string>
+    <string name="kpi_users">Пользователи</string>
+    <string name="add_entity">Добавить сущность</string>
+    <string name="edit_entity">Редактировать</string>
+    <string name="delete_entity">Удалить</string>
+    <string name="open_vehicles_list">Открыть список автомобилей</string>
+    <string name="open_fleets_list">Открыть список автопарков</string>
+    <string name="open_companies_list">Открыть список компаний</string>
+    <string name="open_users_list">Открыть список пользователей</string>
 </resources>

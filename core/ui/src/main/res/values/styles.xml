@@ -1,0 +1,19 @@
+<resources>
+    <style name="TextAppearance.Fleet.Title" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:textColor">@color/fleet_fg</item>
+    </style>
+
+    <style name="TextAppearance.Fleet.Subtitle" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/fleet_muted_fg</item>
+    </style>
+
+    <style name="TextAppearance.Fleet.Caption" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textColor">@color/fleet_muted_fg</item>
+    </style>
+
+    <style name="Widget.Fleet.PrimaryButton" parent="Widget.Material3.Button">
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">@dimen/fleet_radius_md</item>
+        <item name="backgroundTint">@color/fleet_primary</item>
+    </style>
+</resources>

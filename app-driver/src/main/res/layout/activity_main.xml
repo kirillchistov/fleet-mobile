@@ -3,29 +3,82 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:background="@drawable/bg_fleet_screen"
+    android:padding="@dimen/fleet_screen_padding">
 
-    <TextView
-        android:id="@+id/titleText"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topSystemInsetGuideline"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/driver_title"
-        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="@dimen/fleet_system_top_inset" />
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="@dimen/fleet_logo_welcome_width"
+        android:layout_height="@dimen/fleet_logo_welcome_height"
+        android:contentDescription="@string/fleet_logo_content_description"
+        android:src="@drawable/ic_logo_full"
+        app:layout_constraintBottom_toTopOf="@id/mainCard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35" />
+        app:layout_constraintTop_toBottomOf="@id/topSystemInsetGuideline"
+        app:layout_constraintVertical_bias="0.5" />
 
-    <Button
-        android:id="@+id/btnNext"
+    <LinearLayout
+        android:id="@+id/mainCard"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/next_button"
+        android:background="@drawable/bg_fleet_card"
+        android:orientation="vertical"
+        android:padding="@dimen/fleet_card_padding"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleText"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/driver_title"
+            android:textAppearance="@style/TextAppearance.Fleet.Title" />
+
+        <TextView
+            android:id="@+id/subtitleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fleet_spacing_sm"
+            android:gravity="center"
+            android:text="@string/driver_subtitle"
+            android:textAppearance="@style/TextAppearance.Fleet.Subtitle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNext"
+            style="@style/Widget.Fleet.PrimaryButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fleet_spacing_lg"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:minHeight="@dimen/fleet_button_min_height"
+            android:text="@string/next_button"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/footerHint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/footer_hint"
+        android:textAppearance="@style/TextAppearance.Fleet.Caption"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainCard"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

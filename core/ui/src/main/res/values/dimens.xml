@@ -1,0 +1,13 @@
+<resources>
+    <dimen name="fleet_radius_md">12dp</dimen>
+    <dimen name="fleet_screen_padding">24dp</dimen>
+    <dimen name="fleet_system_top_inset">44dp</dimen>
+    <dimen name="fleet_logo_welcome_width">165dp</dimen>
+    <dimen name="fleet_logo_welcome_height">66dp</dimen>
+    <dimen name="fleet_logo_sign_width">40dp</dimen>
+    <dimen name="fleet_logo_sign_height">34dp</dimen>
+    <dimen name="fleet_card_padding">20dp</dimen>
+    <dimen name="fleet_spacing_sm">8dp</dimen>
+    <dimen name="fleet_spacing_lg">20dp</dimen>
+    <dimen name="fleet_button_min_height">48dp</dimen>
+</resources>

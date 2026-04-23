@@ -1,4 +1,10 @@
 <resources>
-    <color name="fleet_primary">#1E4D8C</color>
-    <color name="fleet_secondary">#2D8A8B</color>
+    <!-- NextJS design tokens from src/app/globals.css -->
+    <color name="fleet_bg">#0F1320</color>
+    <color name="fleet_fg">#F1F5F9</color>
+    <color name="fleet_card">#1A1F2E</color>
+    <color name="fleet_border">#2A3042</color>
+    <color name="fleet_primary">#3B82F6</color>
+    <color name="fleet_secondary">#232839</color>
+    <color name="fleet_muted_fg">#94A3B8</color>
 </resources>
