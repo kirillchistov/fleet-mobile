@@ -55,17 +55,29 @@
             android:text="@string/driver_subtitle"
             android:textAppearance="@style/TextAppearance.Fleet.Subtitle" />
 
+        <EditText
+            android:id="@+id/phoneInput"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="@dimen/fleet_spacing_lg"
+            android:background="@drawable/bg_fleet_card"
+            android:hint="@string/driver_phone_hint"
+            android:inputType="phone"
+            android:paddingHorizontal="12dp"
+            android:textColor="@color/fleet_fg"
+            android:textColorHint="@color/fleet_muted_fg" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnNext"
             style="@style/Widget.Fleet.PrimaryButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/fleet_spacing_lg"
+            android:layout_marginTop="@dimen/fleet_spacing_sm"
+            android:enabled="false"
             android:insetTop="0dp"
             android:insetBottom="0dp"
             android:minHeight="@dimen/fleet_button_min_height"
-            android:text="@string/next_button"
-            />
+            android:text="@string/driver_get_password" />
     </LinearLayout>
 
     <TextView

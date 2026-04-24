@@ -8,6 +8,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FleetDriver.Splash">
         <activity
+            android:name=".DriverProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FleetDriver" />
+        <activity
+            android:name=".DriverDashboardActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FleetDriver" />
+        <activity
+            android:name=".DriverSpecsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FleetDriver" />
+        <activity
+            android:name=".DriverStsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FleetDriver" />
+        <activity
+            android:name=".DriverJournalNewRecordActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FleetDriver" />
+        <activity
+            android:name=".DriverJournalActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FleetDriver" />
+        <activity
+            android:name=".DriverVehicleDetailsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FleetDriver" />
+        <activity
             android:name=".DriverHomeActivity"
             android:exported="false"
             android:theme="@style/Theme.FleetDriver" />

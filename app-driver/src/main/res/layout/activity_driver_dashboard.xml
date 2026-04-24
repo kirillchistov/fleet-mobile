@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_fleet_screen"
+    android:orientation="vertical"
+    android:padding="@dimen/fleet_screen_padding">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fleet_system_top_inset" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/driver_dashboard_title"
+        android:textAppearance="@style/TextAppearance.Fleet.Title"
+        android:textColor="@color/fleet_fg" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_kpi_widget"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/driver_kpi_auto"
+                android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="3"
+                android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
+                android:textColor="@color/fleet_fg" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_kpi_widget"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/driver_kpi_trips"
+                android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="12"
+                android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
+                android:textColor="@color/fleet_fg" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_kpi_widget"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/driver_kpi_requests"
+                android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="4"
+                android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
+                android:textColor="@color/fleet_fg" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_kpi_widget"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/driver_kpi_rating"
+                android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="4.1"
+                android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
+                android:textColor="@color/fleet_fg" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnProfile"
+                style="@style/Widget.Fleet.PrimaryButton"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/driver_btn_profile" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAvailableCars"
+                style="@style/Widget.Fleet.PrimaryButton"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/driver_btn_available_cars" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRoutes"
+                style="@style/Widget.Fleet.PrimaryButton"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/driver_btn_routes" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnChargingStations"
+                style="@style/Widget.Fleet.PrimaryButton"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/driver_btn_chargers" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSupportService"
+                style="@style/Widget.Fleet.PrimaryButton"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/driver_btn_support_service" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
