@@ -53,77 +53,107 @@
             android:orientation="horizontal"
             android:weightSum="4">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/kpi_vehicles"
-                android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+                android:background="@drawable/bg_kpi_widget"
+                android:orientation="vertical"
+                android:padding="8dp">
 
-            <TextView
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/kpi_vehicles"
+                    android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+
+                <TextView
+                    android:id="@+id/kpiVehicles"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
+                    android:textColor="@color/fleet_fg" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/kpi_fleets"
-                android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+                android:background="@drawable/bg_kpi_widget"
+                android:orientation="vertical"
+                android:padding="8dp">
 
-            <TextView
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/kpi_fleets"
+                    android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+
+                <TextView
+                    android:id="@+id/kpiFleets"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
+                    android:textColor="@color/fleet_fg" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/kpi_companies"
-                android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+                android:background="@drawable/bg_kpi_widget"
+                android:orientation="vertical"
+                android:padding="8dp">
 
-            <TextView
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/kpi_companies"
+                    android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+
+                <TextView
+                    android:id="@+id/kpiCompanies"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
+                    android:textColor="@color/fleet_fg" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/kpi_users"
-                android:textAppearance="@style/TextAppearance.Fleet.Caption" />
-        </LinearLayout>
+                android:background="@drawable/bg_kpi_widget"
+                android:orientation="vertical"
+                android:padding="8dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:orientation="horizontal"
-            android:weightSum="4">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/kpi_users"
+                    android:textAppearance="@style/TextAppearance.Fleet.Caption" />
 
-            <TextView
-                android:id="@+id/kpiVehicles"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textAppearance="@style/TextAppearance.Fleet.Title" />
-
-            <TextView
-                android:id="@+id/kpiFleets"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textAppearance="@style/TextAppearance.Fleet.Title" />
-
-            <TextView
-                android:id="@+id/kpiCompanies"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textAppearance="@style/TextAppearance.Fleet.Title" />
-
-            <TextView
-                android:id="@+id/kpiUsers"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textAppearance="@style/TextAppearance.Fleet.Title" />
+                <TextView
+                    android:id="@+id/kpiUsers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
+                    android:textColor="@color/fleet_fg" />
+            </LinearLayout>
         </LinearLayout>
 
             <com.google.android.material.button.MaterialButton

@@ -78,7 +78,7 @@ class EntityListActivity : AppCompatActivity() {
     private fun bindBottomNavigation() {
         findViewById<LinearLayout>(R.id.navVehicles).setOnClickListener { navigateToType(ManagerEntityType.VEHICLES) }
         findViewById<LinearLayout>(R.id.navUsers).setOnClickListener { navigateToType(ManagerEntityType.USERS) }
-        findViewById<LinearLayout>(R.id.navService).setOnClickListener { navigateToType(ManagerEntityType.FLEETS) }
+        findViewById<LinearLayout>(R.id.navService).setOnClickListener { startActivity(Intent(this, ServiceActivity::class.java)) }
     }
 
     private fun navigateToType(target: ManagerEntityType) {

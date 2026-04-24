@@ -46,9 +46,15 @@
     <string name="filter_button">Фильтры</string>
     <string name="bottom_nav_vehicles">Автомобили</string>
     <string name="bottom_nav_users">Водители</string>
-    <string name="bottom_nav_service">Сервис</string>
+    <string name="bottom_nav_service">Журналы</string>
     <string name="bottom_nav_truck_icon">🚚</string>
     <string name="bottom_nav_users_icon">👤</string>
     <string name="bottom_nav_service_icon">🔧</string>
     <string name="details_entity">Подробнее</string>
+    <string name="service_title">Журналы</string>
+    <string name="tab_tickets">Заявки</string>
+    <string name="tab_charging">Зарядки</string>
+    <string name="ticket_card_title">Карточка заявки</string>
+    <string name="charging_card_title">Карточка зарядки</string>
+    <string name="service_empty_state">Нет данных для отображения</string>
 </resources>

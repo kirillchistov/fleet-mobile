@@ -38,6 +38,23 @@ object ManagerRepository {
         User("u6", "Сергей Иванов", "user", "c3", "+7 (843) 333-44-55"),
     )
 
+    val serviceTickets = mutableListOf(
+        ServiceTicket("t1", "Замена масла и фильтров", "v1", "c1", "low", "completed", "2024-12-15"),
+        ServiceTicket("t2", "Ремонт тормозной системы", "v2", "c1", "high", "in_progress", "2025-01-20"),
+        ServiceTicket("t3", "Диагностика двигателя", "v3", "c1", "medium", "open", "2025-02-04"),
+        ServiceTicket("t4", "Кузовной ремонт", "v6", "c2", "medium", "in_progress", "2025-01-25"),
+    )
+
+    val chargingSessions = mutableListOf(
+        ChargingSession("ch1", "v1", "МСК-Юг #12", "120 кВт", "charging", "08:20"),
+        ChargingSession("ch2", "v3", "МСК-Север #4", "90 кВт", "queued", "09:05"),
+        ChargingSession("ch3", "v6", "СПБ-Центр #3", "60 кВт", "completed", "07:10"),
+    )
+
     fun companyName(id: String): String = companies.firstOrNull { it.id == id }?.name ?: "—"
     fun fleetName(id: String): String = fleets.firstOrNull { it.id == id }?.name ?: "—"
+    fun vehicleLabel(id: String): String {
+        val v = vehicles.firstOrNull { it.id == id } ?: return "—"
+        return "${v.model} • ${v.vin.take(8)}…"
+    }
 }

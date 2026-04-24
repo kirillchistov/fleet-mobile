@@ -8,6 +8,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FleetManager.Splash">
         <activity
+            android:name=".ServiceActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FleetManager" />
+        <activity
             android:name=".EntityDetailsActivity"
             android:exported="false"
             android:theme="@style/Theme.FleetManager" />
