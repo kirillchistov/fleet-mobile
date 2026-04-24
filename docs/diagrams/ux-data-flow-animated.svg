@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1170" viewBox="0 0 1500 1170">
+  <defs>
+    <style>
+      .bg { fill: #0a0f1e; }
+      .title { fill: #f8fafc; font: 700 34px Arial, sans-serif; }
+      .sub { fill: #94a3b8; font: 500 16px Arial, sans-serif; }
+      .lane { fill: #0f172a; stroke: #1e293b; stroke-width: 2; rx: 14; }
+      .laneText { fill: #cbd5e1; font: 600 15px Arial, sans-serif; }
+      .node { fill: #111b34; stroke: #334155; stroke-width: 2; rx: 12; }
+      .nodeTxt { fill: #e2e8f0; font: 600 15px Arial, sans-serif; text-anchor: middle; dominant-baseline: middle; }
+      .arrow { stroke: #22d3ee; stroke-width: 3; fill: none; marker-end: url(#arrowhead); stroke-dasharray: 8 8; }
+      .warn { fill: #2b1220; stroke: #ef4444; }
+      .warnTxt { fill: #fecdd3; font: 600 15px Arial, sans-serif; text-anchor: middle; dominant-baseline: middle; }
+      .pulse { fill: #22d3ee; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <polygon points="0,0 10,4 0,8" fill="#22d3ee"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1500" height="1170"/>
+  <text class="title" x="60" y="70">UX Flow + Client-Server Data Chain (Flux-style)</text>
+  <text class="sub" x="60" y="102">User Action -&gt; UI State -&gt; Repository -&gt; API/Mock -&gt; Response -&gt; Render</text>
+
+  <rect class="lane" x="60" y="150" width="1380" height="170" rx="14"/>
+  <text class="laneText" x="90" y="180" dominant-baseline="hanging">
+    <tspan x="90" dy="0">User Layer</tspan>
+    <tspan x="90" dy="20">(Manager / Driver)</tspan>
+  </text>
+
+  <rect class="lane" x="60" y="350" width="1380" height="220" rx="14"/>
+  <text class="laneText" x="90" y="380" dominant-baseline="hanging">
+    <tspan x="90" dy="0">Presentation Layer</tspan>
+    <tspan x="90" dy="20">(Activities + Adapters + UI Components)</tspan>
+  </text>
+
+  <rect class="lane" x="60" y="610" width="1380" height="220" rx="14"/>
+  <text class="laneText" x="90" y="640" dominant-baseline="hanging">
+    <tspan x="90" dy="0">Data Layer</tspan>
+    <tspan x="90" dy="20">(Repository + Models + Local fallback)</tspan>
+  </text>
+
+  <rect class="lane" x="60" y="870" width="1380" height="220" rx="14"/>
+  <text class="laneText" x="90" y="900" dominant-baseline="hanging">
+    <tspan x="90" dy="0">External Layer</tspan>
+    <tspan x="90" dy="20">(Backend API / Staging / CI Feedback)</tspan>
+  </text>
+
+  <rect class="node" x="635" y="203" width="230" height="64" rx="12"/>
+  <text class="nodeTxt" x="750" y="235">Tap / Input / Filter</text>
+
+  <rect class="node" x="430" y="450" width="270" height="88" rx="12"/>
+  <text class="nodeTxt" x="565" y="483">
+    <tspan x="565" dy="0">Activity receives event</tspan>
+    <tspan x="565" dy="22">and updates screen state</tspan>
+  </text>
+
+  <rect class="node" x="810" y="450" width="280" height="88" rx="12"/>
+  <text class="nodeTxt" x="950" y="483">
+    <tspan x="950" dy="0">Recycler/Dialog renders</tspan>
+    <tspan x="950" dy="22">new state snapshot</tspan>
+  </text>
+
+  <rect class="node" x="430" y="710" width="290" height="96" rx="12"/>
+  <text class="nodeTxt" x="575" y="746">
+    <tspan x="575" dy="0">ManagerRepository / Driver data</tspan>
+    <tspan x="575" dy="22">mock + fallback + transforms</tspan>
+  </text>
+
+  <rect class="node" x="820" y="710" width="280" height="96" rx="12"/>
+  <text class="nodeTxt" x="960" y="746">
+    <tspan x="960" dy="0">DTO -&gt; UI model mapping</tspan>
+    <tspan x="960" dy="22">status/search/filter shaping</tspan>
+  </text>
+
+  <rect class="node" x="430" y="940" width="320" height="96" rx="12"/>
+  <text class="nodeTxt" x="590" y="976">
+    <tspan x="590" dy="0">Backend API / staging endpoint</tspan>
+    <tspan x="590" dy="22">or local emulated response</tspan>
+  </text>
+
+  <rect class="node" x="900" y="940" width="280" height="96" rx="12"/>
+  <text class="nodeTxt" x="1040" y="976">
+    <tspan x="1040" dy="0">Build + smoke verification</tspan>
+    <tspan x="1040" dy="22">in CI (debug APK)</tspan>
+  </text>
+
+  <rect class="node warn" x="1160" y="698" width="250" height="120" rx="12"/>
+  <text class="warnTxt" x="1285" y="734">
+    <tspan x="1285" dy="0">Current Risk:</tspan>
+    <tspan x="1285" dy="22">Service screen loop</tspan>
+    <tspan x="1285" dy="22">empty list despite navigation</tspan>
+  </text>
+
+  <path class="arrow" d="M750 267 L750 390 L565 390 L565 450"/>
+  <path class="arrow" d="M700 494 L810 494"/>
+  <path class="arrow" d="M950 538 L950 640 L575 640 L575 710"/>
+  <path class="arrow" d="M720 758 L820 758"/>
+  <path class="arrow" d="M575 806 L575 890 L590 890 L590 940"/>
+  <path class="arrow" d="M750 988 L900 988"/>
+  <path class="arrow" d="M1100 758 L1160 758"/>
+  <path class="arrow" d="M1285 818 L1285 910 L860 910 L860 890 L590 890 L590 940"/>
+  <path class="arrow" d="M565 538 L565 680 L410 680 L410 1060 L1040 1060 L1040 1006"/>
+
+  <circle class="pulse" r="5">
+    <animateMotion dur="3.8s" repeatCount="indefinite" path="M750 267 L750 390 L565 390 L565 450"/>
+  </circle>
+  <circle class="pulse" r="5">
+    <animateMotion dur="3.2s" repeatCount="indefinite" path="M700 494 L810 494"/>
+  </circle>
+  <circle class="pulse" r="5">
+    <animateMotion dur="4.1s" repeatCount="indefinite" path="M950 538 L950 640 L575 640 L575 710"/>
+  </circle>
+  <circle class="pulse" r="5">
+    <animateMotion dur="3.4s" repeatCount="indefinite" path="M575 806 L575 890 L590 890 L590 940"/>
+  </circle>
+  <circle class="pulse" r="5">
+    <animateMotion dur="3.6s" repeatCount="indefinite" path="M565 538 L565 680 L410 680 L410 1060 L1040 1060 L1040 1006"/>
+  </circle>
+  <circle fill="#ef4444" r="6">
+    <animate attributeName="opacity" values="0.2;1;0.2" dur="1.4s" repeatCount="indefinite"/>
+    <animateMotion dur="4.8s" repeatCount="indefinite" path="M1285 818 L1285 910 L860 910 L860 890 L590 890 L590 940"/>
+  </circle>
+</svg>

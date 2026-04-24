@@ -11,6 +11,20 @@
 
 Бэкенд-контракт (REST, Flask): см. `../backend/http_api.py` в проекте zai-gen.
 
+## Диаграммы
+
+### Архитектура и взаимодействие компонентов
+
+![Architecture Diagram](./docs/diagrams/architecture-interaction-animated.svg)
+
+Файл: `docs/diagrams/architecture-interaction-animated.svg`
+
+### UX flow и цепочка данных клиент-сервер
+
+![UX Data Flow Diagram](./docs/diagrams/ux-data-flow-animated.svg)
+
+Файл: `docs/diagrams/ux-data-flow-animated.svg`
+
 ## Текущее состояние (Sprint 1)
 
 В репозитории создан базовый Android монорепо-каркас:

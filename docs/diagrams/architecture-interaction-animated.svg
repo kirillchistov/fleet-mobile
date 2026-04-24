@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="980" viewBox="0 0 1400 980">
+  <defs>
+    <style>
+      .bg { fill: #0b1020; }
+      .title { fill: #f8fafc; font: 700 34px Arial, sans-serif; }
+      .subtitle { fill: #94a3b8; font: 500 16px Arial, sans-serif; }
+      .card { fill: #111b34; stroke: #334155; stroke-width: 2; rx: 16; }
+      .cardText { fill: #e2e8f0; font: 600 18px Arial, sans-serif; text-anchor: middle; dominant-baseline: middle; }
+      .small { fill: #94a3b8; font: 400 14px Arial, sans-serif; text-anchor: middle; dominant-baseline: middle; }
+      .risk { fill: #30141a; stroke: #ef4444; }
+      .riskText { fill: #fecaca; font: 600 16px Arial, sans-serif; text-anchor: middle; dominant-baseline: middle; }
+      .link { stroke: #38bdf8; stroke-width: 3; fill: none; stroke-linecap: round; stroke-dasharray: 8 8; }
+      .pulse { fill: #38bdf8; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1400" height="980"/>
+  <text class="title" x="60" y="70">Fleet Mobile Architecture &amp; Component Interaction</text>
+  <text class="subtitle" x="60" y="102">Manager app + Driver app + Shared UI + Data layer + CI pipeline</text>
+
+  <rect class="card" x="70" y="210" width="320" height="170" rx="16"/>
+  <text class="cardText" x="230" y="252">app-manager</text>
+  <text class="small" x="230" y="282">Dashboard, Entity Lists, Details</text>
+  <text class="small" x="230" y="306">CRUD dialogs, Bottom Navigation</text>
+  <text class="small" x="230" y="330">Service/Journals (unstable block)</text>
+
+  <rect class="card" x="70" y="470" width="320" height="170" rx="16"/>
+  <text class="cardText" x="230" y="512">app-driver</text>
+  <text class="small" x="230" y="542">Phone Login, Driver Dashboard</text>
+  <text class="small" x="230" y="566">Home, Journal, STS, Specs</text>
+  <text class="small" x="230" y="590">Figma parity in progress</text>
+
+  <rect class="card" x="520" y="350" width="360" height="190" rx="16"/>
+  <text class="cardText" x="700" y="392">core/ui (shared module)</text>
+  <text class="small" x="700" y="424">colors.xml, dimens.xml, styles.xml</text>
+  <text class="small" x="700" y="448">shared drawables and KPI widget</text>
+  <text class="small" x="700" y="472">common dark theme language</text>
+
+  <rect class="card" x="1010" y="210" width="320" height="170" rx="16"/>
+  <text class="cardText" x="1170" y="252">Data &amp; Domain Layer</text>
+  <text class="small" x="1170" y="282">ManagerRepository (mock/fallback)</text>
+  <text class="small" x="1170" y="306">Entity models and service models</text>
+  <text class="small" x="1170" y="330">Intent-based navigation payloads</text>
+
+  <rect class="card" x="1010" y="470" width="320" height="170" rx="16"/>
+  <text class="cardText" x="1170" y="512">CI / Delivery</text>
+  <text class="small" x="1170" y="542">.github/workflows/android-debug.yml</text>
+  <text class="small" x="1170" y="566">debug APK artifacts for both apps</text>
+  <text class="small" x="1170" y="590">stability gate for iterations</text>
+
+  <rect class="card risk" x="520" y="700" width="810" height="170" rx="16"/>
+  <text class="riskText" x="925" y="742">Risk Area: Manager Service Screen Loop</text>
+  <text class="small" x="925" y="774">Symptoms: empty lists / unstable rendering in ServiceActivity.</text>
+  <text class="small" x="925" y="798">Action: verify repository population -> binding lifecycle -> visibility constraints -> back stack restore.</text>
+  <text class="small" x="925" y="822">Reference: debug-service-activity.md</text>
+
+  <path class="link" d="M390 295 L455 295 L455 445 L520 445"/>
+  <path class="link" d="M390 555 L455 555 L455 445 L520 445"/>
+  <path class="link" d="M880 445 L950 445 L950 295 L1010 295"/>
+  <path class="link" d="M880 445 L950 445 L950 555 L1010 555"/>
+  <path class="link" d="M70 295 L40 295 L40 785 L520 785"/>
+
+  <circle class="pulse" r="6">
+    <animateMotion dur="4s" repeatCount="indefinite" path="M390 295 L455 295 L455 445 L520 445"/>
+  </circle>
+  <circle class="pulse" r="6">
+    <animateMotion dur="4.4s" repeatCount="indefinite" path="M390 555 L455 555 L455 445 L520 445"/>
+  </circle>
+  <circle class="pulse" r="6">
+    <animateMotion dur="4.2s" repeatCount="indefinite" path="M880 445 L950 445 L950 295 L1010 295"/>
+  </circle>
+  <circle class="pulse" r="6">
+    <animateMotion dur="3.8s" repeatCount="indefinite" path="M880 445 L950 445 L950 555 L1010 555"/>
+  </circle>
+  <circle fill="#ef4444" r="7">
+    <animate attributeName="opacity" values="0.2;1;0.2" dur="1.6s" repeatCount="indefinite"/>
+    <animateMotion dur="5s" repeatCount="indefinite" path="M70 295 L40 295 L40 785 L520 785"/>
+  </circle>
+</svg>
