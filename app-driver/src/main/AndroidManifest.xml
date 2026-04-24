@@ -8,6 +8,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FleetDriver.Splash">
         <activity
+            android:name=".DriverAvailableCarsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FleetDriver" />
+        <activity
             android:name=".DriverProfileActivity"
             android:exported="false"
             android:theme="@style/Theme.FleetDriver" />

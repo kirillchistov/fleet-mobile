@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.Toast
+import com.google.android.material.button.MaterialButton
 import androidx.appcompat.app.AppCompatActivity
 
 class DriverVehicleDetailsActivity : AppCompatActivity() {
@@ -18,6 +20,12 @@ class DriverVehicleDetailsActivity : AppCompatActivity() {
         }
         findViewById<LinearLayout>(R.id.specsRow).setOnClickListener {
             startActivity(Intent(this, DriverSpecsActivity::class.java))
+        }
+        findViewById<MaterialButton>(R.id.btnOpenJournal).setOnClickListener {
+            startActivity(Intent(this, DriverJournalActivity::class.java))
+        }
+        findViewById<MaterialButton>(R.id.btnOpenSupport).setOnClickListener {
+            Toast.makeText(this, R.string.driver_support_opened, Toast.LENGTH_SHORT).show()
         }
 
         findViewById<LinearLayout>(R.id.navVehicles).setOnClickListener { finish() }

@@ -101,7 +101,7 @@
                     <ImageView
                         android:layout_width="190dp"
                         android:layout_height="130dp"
-                        android:src="@drawable/ic_driver_foreground" />
+                        android:src="@drawable/ic_vehicle_sova" />
                 </LinearLayout>
 
                 <LinearLayout

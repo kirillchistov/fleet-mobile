@@ -14,7 +14,7 @@ class DriverDashboardActivity : AppCompatActivity() {
             startActivity(Intent(this, DriverProfileActivity::class.java))
         }
         findViewById<Button>(R.id.btnAvailableCars).setOnClickListener {
-            startActivity(Intent(this, DriverHomeActivity::class.java))
+            startActivity(Intent(this, DriverAvailableCarsActivity::class.java))
         }
         findViewById<Button>(R.id.btnRoutes).setOnClickListener {
             startActivity(Intent(this, DriverHomeActivity::class.java))

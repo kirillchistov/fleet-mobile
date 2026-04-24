@@ -80,6 +80,13 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/driver_vehicle_status"
+                        android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="@string/driver_vehicle_plate_label"
                         android:textAppearance="@style/TextAppearance.Fleet.Caption" />
@@ -104,13 +111,41 @@
                         android:text="@string/driver_vehicle_vin_value"
                         android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
                         android:textColor="@color/fleet_fg" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/driver_vehicle_mileage_label"
+                        android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/driver_vehicle_mileage_value"
+                        android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
+                        android:textColor="@color/fleet_fg" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/driver_vehicle_charge_label"
+                        android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/driver_vehicle_charge_value"
+                        android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
+                        android:textColor="@color/fleet_fg" />
                 </LinearLayout>
 
                 <ImageView
                     android:layout_width="140dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="10dp"
-                    android:src="@drawable/ic_driver_foreground" />
+                    android:src="@drawable/ic_vehicle_sova" />
             </LinearLayout>
 
             <TextView
@@ -313,6 +348,31 @@
                         android:text="@string/chevron_right"
                         android:textAppearance="@style/TextAppearance.Fleet.Subtitle" />
                 </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnOpenJournal"
+                    style="@style/Widget.Fleet.PrimaryButton"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:text="@string/driver_cta_open_journal" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnOpenSupport"
+                    style="@style/Widget.Fleet.PrimaryButton"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:text="@string/driver_cta_support" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

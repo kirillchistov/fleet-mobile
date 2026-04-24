@@ -31,18 +31,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
-            android:text="@string/driver_journal_title"
+            android:text="@string/driver_available_cars_title"
             android:textAppearance="@style/TextAppearance.Fleet.Title"
             android:textColor="@color/fleet_fg" />
-
-        <ImageButton
-            android:id="@+id/addButton"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:background="@android:color/transparent"
-            android:contentDescription="@string/driver_journal_add"
-            android:src="@android:drawable/ic_input_add"
-            android:tint="@color/fleet_fg" />
     </LinearLayout>
 
     <EditText
@@ -51,7 +42,7 @@
         android:layout_height="46dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/bg_fleet_card"
-        android:hint="@string/driver_journal_search_hint"
+        android:hint="@string/driver_available_cars_search_hint"
         android:inputType="text"
         android:paddingHorizontal="14dp"
         android:textColor="@color/fleet_fg"
@@ -69,17 +60,19 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/journalCard1"
+                android:id="@+id/cardSova25"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_fleet_card"
+                android:clickable="true"
+                android:focusable="true"
                 android:orientation="vertical"
                 android:padding="14dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/driver_journal_item_1"
+                    android:text="Sova 25 • X349MT116"
                     android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
                     android:textColor="@color/fleet_fg" />
 
@@ -87,38 +80,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="@string/driver_journal_item_type_1"
+                    android:text="@string/driver_available_car_meta_1"
                     android:textAppearance="@style/TextAppearance.Fleet.Caption" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/driver_journal_item_meta_1"
-                    android:textAppearance="@style/TextAppearance.Fleet.Caption" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/openDetails1"
-                    style="@style/Widget.Fleet.PrimaryButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="46dp"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/driver_journal_open_details" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/journalCard2"
+                android:id="@+id/cardSova35"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/bg_fleet_card"
+                android:clickable="true"
+                android:focusable="true"
                 android:orientation="vertical"
                 android:padding="14dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/driver_journal_item_2"
+                    android:text="Sova 35 • К728РХ116"
                     android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
                     android:textColor="@color/fleet_fg" />
 
@@ -126,23 +106,34 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="@string/driver_journal_item_type_2"
+                    android:text="@string/driver_available_car_meta_2"
                     android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardEvmPro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_fleet_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="EVM Pro • А920НК116"
+                    android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
+                    android:textColor="@color/fleet_fg" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="@string/driver_journal_item_meta_2"
+                    android:text="@string/driver_available_car_meta_3"
                     android:textAppearance="@style/TextAppearance.Fleet.Caption" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/openDetails2"
-                    style="@style/Widget.Fleet.PrimaryButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="46dp"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/driver_journal_open_details" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
@@ -172,7 +163,7 @@
                 android:layout_height="24dp"
                 android:contentDescription="@string/bottom_nav_vehicles"
                 android:src="@drawable/ic_nav_vehicle"
-                app:tint="@color/fleet_muted_fg" />
+                app:tint="@color/fleet_primary" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -220,7 +211,7 @@
                 android:layout_height="24dp"
                 android:contentDescription="@string/bottom_nav_driver_help"
                 android:src="@drawable/ic_nav_help"
-                app:tint="@color/fleet_primary" />
+                app:tint="@color/fleet_muted_fg" />
 
             <TextView
                 android:layout_width="wrap_content"
