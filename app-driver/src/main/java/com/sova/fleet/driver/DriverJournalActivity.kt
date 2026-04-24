@@ -63,22 +63,21 @@ class DriverJournalActivity : AppCompatActivity() {
             startActivity(Intent(this, DriverHomeActivity::class.java))
             finish()
         }
+        findViewById<LinearLayout>(R.id.navHome).setOnClickListener {
+            startActivity(Intent(this, DriverDashboardActivity::class.java))
+            finish()
+        }
         findViewById<LinearLayout>(R.id.navCharging).setOnClickListener {
-            startActivity(
-                Intent(this, DriverHomeActivity::class.java)
-                    .putExtra(DriverHomeActivity.EXTRA_SECTION, DriverHomeActivity.SECTION_CHARGING),
-            )
+            startActivity(Intent(this, DriverChargingMapActivity::class.java))
             finish()
         }
         findViewById<LinearLayout>(R.id.navHelp).setOnClickListener {
-            startActivity(
-                Intent(this, DriverHomeActivity::class.java)
-                    .putExtra(DriverHomeActivity.EXTRA_SECTION, DriverHomeActivity.SECTION_HELP),
-            )
+            startActivity(Intent(this, DriverNotificationsActivity::class.java))
             finish()
         }
         val inactive = getColor(com.sova.fleet.core.ui.R.color.fleet_muted_fg)
         val active = getColor(com.sova.fleet.core.ui.R.color.fleet_primary)
+        findViewById<ImageView>(R.id.navHomeIcon).setColorFilter(inactive)
         findViewById<ImageView>(R.id.navVehiclesIcon).setColorFilter(inactive)
         findViewById<ImageView>(R.id.navChargingIcon).setColorFilter(inactive)
         findViewById<ImageView>(R.id.navHelpIcon).setColorFilter(active)

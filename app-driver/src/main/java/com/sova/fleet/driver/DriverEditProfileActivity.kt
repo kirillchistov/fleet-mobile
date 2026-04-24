@@ -5,33 +5,32 @@ import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
-import com.google.android.material.button.MaterialButton
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.button.MaterialButton
 
-class DriverVehicleDetailsActivity : AppCompatActivity() {
+class DriverEditProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_driver_vehicle_details)
+        setContentView(R.layout.activity_driver_edit_profile)
 
         findViewById<ImageButton>(R.id.backButton).setOnClickListener { finish() }
-        findViewById<LinearLayout>(R.id.stsCard).setOnClickListener {
-            startActivity(Intent(this, DriverStsActivity::class.java))
+        findViewById<MaterialButton>(R.id.saveButton).setOnClickListener {
+            Toast.makeText(this, R.string.driver_profile_saved, Toast.LENGTH_SHORT).show()
+            finish()
         }
-        findViewById<LinearLayout>(R.id.specsRow).setOnClickListener {
-            startActivity(Intent(this, DriverSpecsActivity::class.java))
-        }
-        findViewById<MaterialButton>(R.id.btnOpenJournal).setOnClickListener {
-            startActivity(Intent(this, DriverJournalActivity::class.java))
-        }
-        findViewById<MaterialButton>(R.id.btnOpenSupport).setOnClickListener {
-            startActivity(Intent(this, DriverNotificationsActivity::class.java))
-        }
+        bindBottomNav(activeHome = false, activeVehicles = false, activeHelp = true)
+    }
 
+    private fun bindBottomNav(activeHome: Boolean, activeVehicles: Boolean, activeHelp: Boolean) {
         findViewById<LinearLayout>(R.id.navHome).setOnClickListener {
             startActivity(Intent(this, DriverDashboardActivity::class.java))
             finish()
         }
-        findViewById<LinearLayout>(R.id.navVehicles).setOnClickListener { finish() }
+        findViewById<LinearLayout>(R.id.navVehicles).setOnClickListener {
+            startActivity(Intent(this, DriverHomeActivity::class.java))
+            finish()
+        }
         findViewById<LinearLayout>(R.id.navCharging).setOnClickListener {
             startActivity(Intent(this, DriverChargingMapActivity::class.java))
             finish()
@@ -43,9 +42,9 @@ class DriverVehicleDetailsActivity : AppCompatActivity() {
 
         val active = getColor(com.sova.fleet.core.ui.R.color.fleet_primary)
         val inactive = getColor(com.sova.fleet.core.ui.R.color.fleet_muted_fg)
-        findViewById<ImageView>(R.id.navHomeIcon).setColorFilter(inactive)
-        findViewById<ImageView>(R.id.navVehiclesIcon).setColorFilter(active)
+        findViewById<ImageView>(R.id.navHomeIcon).setColorFilter(if (activeHome) active else inactive)
+        findViewById<ImageView>(R.id.navVehiclesIcon).setColorFilter(if (activeVehicles) active else inactive)
         findViewById<ImageView>(R.id.navChargingIcon).setColorFilter(inactive)
-        findViewById<ImageView>(R.id.navHelpIcon).setColorFilter(inactive)
+        findViewById<ImageView>(R.id.navHelpIcon).setColorFilter(if (activeHelp) active else inactive)
     }
 }

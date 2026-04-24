@@ -20,10 +20,10 @@ class DriverDashboardActivity : AppCompatActivity() {
             startActivity(Intent(this, DriverHomeActivity::class.java))
         }
         findViewById<Button>(R.id.btnChargingStations).setOnClickListener {
-            startActivity(Intent(this, DriverHomeActivity::class.java).putExtra(DriverHomeActivity.EXTRA_SECTION, DriverHomeActivity.SECTION_CHARGING))
+            startActivity(Intent(this, DriverChargingMapActivity::class.java))
         }
         findViewById<Button>(R.id.btnSupportService).setOnClickListener {
-            startActivity(Intent(this, DriverHomeActivity::class.java).putExtra(DriverHomeActivity.EXTRA_SECTION, DriverHomeActivity.SECTION_HELP))
+            startActivity(Intent(this, DriverNotificationsActivity::class.java))
         }
     }
 }

@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/driver_title"
-            android:textAppearance="@style/TextAppearance.Fleet.Title" />
+            android:textAppearance="@style/TextAppearance.Fleet.ScreenTitle" />
 
         <TextView
             android:id="@+id/subtitleText"

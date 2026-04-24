@@ -23,7 +23,7 @@
             android:layout_height="36dp"
             android:background="@android:color/transparent"
             android:contentDescription="@string/back"
-            android:src="@android:drawable/ic_media_previous"
+            android:src="@drawable/ic_back_native"
             android:tint="@color/fleet_fg" />
 
         <TextView
@@ -32,7 +32,7 @@
             android:layout_marginStart="8dp"
             android:layout_weight="1"
             android:text="@string/driver_btn_profile"
-            android:textAppearance="@style/TextAppearance.Fleet.Title"
+            android:textAppearance="@style/TextAppearance.Fleet.ScreenTitle"
             android:textColor="@color/fleet_fg" />
     </LinearLayout>
 
@@ -132,88 +132,6 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <LinearLayout
-        android:id="@+id/bottomNavBar"
-        android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bg_fleet_card"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingHorizontal="10dp"
-        android:weightSum="3">
-
-        <LinearLayout
-            android:id="@+id/navVehicles"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/navVehiclesIcon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:contentDescription="@string/bottom_nav_vehicles"
-                android:src="@drawable/ic_nav_vehicle"
-                app:tint="@color/fleet_muted_fg" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="@string/bottom_nav_vehicles"
-                android:textAppearance="@style/TextAppearance.Fleet.Caption" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/navCharging"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/navChargingIcon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:contentDescription="@string/bottom_nav_driver_charging"
-                android:src="@drawable/ic_nav_charging"
-                app:tint="@color/fleet_muted_fg" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="@string/bottom_nav_driver_charging"
-                android:textAppearance="@style/TextAppearance.Fleet.Caption" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/navHelp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/navHelpIcon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:contentDescription="@string/bottom_nav_driver_help"
-                android:src="@drawable/ic_nav_help"
-                app:tint="@color/fleet_primary" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="@string/bottom_nav_driver_help"
-                android:textAppearance="@style/TextAppearance.Fleet.Caption" />
-        </LinearLayout>
-    </LinearLayout>
+    <include layout="@layout/view_driver_bottom_nav" />
 
 </LinearLayout>

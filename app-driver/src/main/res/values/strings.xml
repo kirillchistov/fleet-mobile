@@ -8,6 +8,7 @@
     <string name="next_placeholder_message">Экран-заглушка спринта 1</string>
     <string name="footer_hint">Sova Fleet • Sprint 1</string>
     <string name="bottom_nav_vehicles">Автомобили</string>
+    <string name="bottom_nav_home">Домой</string>
     <string name="bottom_nav_driver_charging">Зарядки</string>
     <string name="bottom_nav_driver_help">Помощь</string>
     <string name="driver_section_placeholder">Раздел в разработке. Навигация уже подключена.</string>
@@ -83,6 +84,14 @@
     <string name="driver_btn_routes">Маршруты</string>
     <string name="driver_btn_chargers">Зарядные станции</string>
     <string name="driver_btn_support_service">Поддержка и сервис</string>
+    <string name="driver_notifications_title">Уведомления</string>
+    <string name="driver_edit_profile_title">Редактировать профиль</string>
+    <string name="driver_charging_map_title">Зарядки на карте</string>
+    <string name="driver_charging_filter_title">Фильтр зарядных устройств</string>
+    <string name="driver_open_filter">Фильтр</string>
+    <string name="driver_apply_filter">Применить</string>
+    <string name="driver_reset_filter">Сбросить</string>
+    <string name="driver_profile_saved">Профиль сохранен</string>
     <string name="edit_in_progress">Редактирование будет добавлено в следующем шаге</string>
     <string name="driver_profile_edit">Редактировать</string>
     <string name="driver_profile_name_label">ФИО</string>
@@ -95,6 +104,8 @@
     <string name="driver_profile_license_value">77 23 458712 • Категория C</string>
     <string name="driver_profile_experience_label">Стаж</string>
     <string name="driver_profile_experience_value">8 лет</string>
+    <string name="driver_profile_email_label">E-mail</string>
+    <string name="driver_profile_email_value">a.smirnov@sova.dev</string>
     <string name="driver_available_cars_title">Доступные авто</string>
     <string name="driver_available_cars_search_hint">Поиск по модели, номеру, VIN</string>
     <string name="driver_available_car_meta_1">Заряд 68%% • Пробег 124 520 км • Свободен</string>

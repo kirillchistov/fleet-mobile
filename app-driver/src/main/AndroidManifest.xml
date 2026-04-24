@@ -8,6 +8,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FleetDriver.Splash">
         <activity
+            android:name=".DriverChargingFilterActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FleetDriver" />
+        <activity
+            android:name=".DriverChargingMapActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FleetDriver" />
+        <activity
+            android:name=".DriverNotificationsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FleetDriver" />
+        <activity
+            android:name=".DriverEditProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FleetDriver" />
+        <activity
             android:name=".DriverAvailableCarsActivity"
             android:exported="false"
             android:theme="@style/Theme.FleetDriver" />

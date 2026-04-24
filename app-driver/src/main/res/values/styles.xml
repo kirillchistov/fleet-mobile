@@ -1,0 +1,7 @@
+<resources>
+    <style name="TextAppearance.Fleet.ScreenTitle" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/fleet_fg</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+</resources>

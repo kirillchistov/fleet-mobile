@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_fleet_screen"
+    android:orientation="vertical"
+    android:padding="@dimen/fleet_screen_padding">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fleet_system_top_inset" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/back"
+            android:src="@drawable/ic_back_native"
+            android:tint="@color/fleet_fg" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="@string/driver_charging_filter_title"
+            android:textAppearance="@style/TextAppearance.Fleet.ScreenTitle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_fleet_card"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Тип разъема"
+            android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CCS2"
+            android:textColor="@color/fleet_fg" />
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GB/T DC"
+            android:textColor="@color/fleet_fg" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Мощность"
+            android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="50+ кВт"
+            android:textColor="@color/fleet_fg" />
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="120+ кВт"
+            android:textColor="@color/fleet_fg" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/resetButton"
+                style="@style/Widget.Fleet.PrimaryButton"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:text="@string/driver_reset_filter" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/applyButton"
+                style="@style/Widget.Fleet.PrimaryButton"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:text="@string/driver_apply_filter" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <include layout="@layout/view_driver_bottom_nav" />
+</LinearLayout>

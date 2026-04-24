@@ -78,7 +78,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/driver_range_km"
-                            android:textAppearance="@style/TextAppearance.Fleet.Title"
+                            android:textAppearance="@style/TextAppearance.Fleet.ScreenTitle"
                             android:textColor="@color/fleet_fg" />
 
                         <ProgressBar
@@ -444,10 +444,35 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:paddingHorizontal="10dp"
-        android:weightSum="3"
+        android:weightSum="4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/navHomeIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/bottom_nav_home"
+                android:src="@drawable/ic_nav_home"
+                app:tint="@color/fleet_muted_fg" />
+
+            <TextView
+                android:id="@+id/navHomeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/bottom_nav_home"
+                android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/navVehicles"

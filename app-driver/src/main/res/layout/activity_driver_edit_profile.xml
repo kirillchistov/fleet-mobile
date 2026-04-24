@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_fleet_screen"
+    android:orientation="vertical"
+    android:padding="@dimen/fleet_screen_padding">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fleet_system_top_inset" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/back"
+            android:src="@drawable/ic_back_native"
+            android:tint="@color/fleet_fg" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="@string/driver_edit_profile_title"
+            android:textAppearance="@style/TextAppearance.Fleet.ScreenTitle" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_fleet_card"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/driver_profile_name_label"
+                    android:text="@string/driver_profile_name_value"
+                    android:textColor="@color/fleet_fg"
+                    android:textColorHint="@color/fleet_muted_fg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/fleet_border" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/driver_profile_phone_label"
+                    android:text="@string/driver_profile_phone_value"
+                    android:textColor="@color/fleet_fg"
+                    android:textColorHint="@color/fleet_muted_fg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/fleet_border" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/driver_profile_email_label"
+                    android:text="@string/driver_profile_email_value"
+                    android:textColor="@color/fleet_fg"
+                    android:textColorHint="@color/fleet_muted_fg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/fleet_border" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/driver_profile_license_label"
+                    android:text="@string/driver_profile_license_value"
+                    android:textColor="@color/fleet_fg"
+                    android:textColorHint="@color/fleet_muted_fg" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/saveButton"
+                style="@style/Widget.Fleet.PrimaryButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/driver_apply_filter" />
+        </LinearLayout>
+    </ScrollView>
+    <include layout="@layout/view_driver_bottom_nav" />
+
+</LinearLayout>

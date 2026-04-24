@@ -22,9 +22,19 @@ class DriverHomeActivity : AppCompatActivity() {
         findViewById<LinearLayout>(R.id.openLogbookTile).setOnClickListener {
             startActivity(Intent(this, DriverJournalActivity::class.java))
         }
+        findViewById<LinearLayout>(R.id.navHome).setOnClickListener {
+            startActivity(Intent(this, DriverDashboardActivity::class.java))
+            finish()
+        }
         findViewById<LinearLayout>(R.id.navVehicles).setOnClickListener { showSection(Section.VEHICLES) }
-        findViewById<LinearLayout>(R.id.navCharging).setOnClickListener { showSection(Section.CHARGING) }
-        findViewById<LinearLayout>(R.id.navHelp).setOnClickListener { showSection(Section.HELP) }
+        findViewById<LinearLayout>(R.id.navCharging).setOnClickListener {
+            startActivity(Intent(this, DriverChargingMapActivity::class.java))
+            finish()
+        }
+        findViewById<LinearLayout>(R.id.navHelp).setOnClickListener {
+            startActivity(Intent(this, DriverNotificationsActivity::class.java))
+            finish()
+        }
 
         val initial = intent.getStringExtra(EXTRA_SECTION)
         when (initial) {
@@ -41,6 +51,7 @@ class DriverHomeActivity : AppCompatActivity() {
         val help = findViewById<LinearLayout>(R.id.sectionHelp)
 
         val vehiclesIcon = findViewById<ImageView>(R.id.navVehiclesIcon)
+        val homeIcon = findViewById<ImageView>(R.id.navHomeIcon)
         val chargingIcon = findViewById<ImageView>(R.id.navChargingIcon)
         val helpIcon = findViewById<ImageView>(R.id.navHelpIcon)
 
@@ -51,6 +62,7 @@ class DriverHomeActivity : AppCompatActivity() {
         charging.visibility = if (section == Section.CHARGING) LinearLayout.VISIBLE else LinearLayout.GONE
         help.visibility = if (section == Section.HELP) LinearLayout.VISIBLE else LinearLayout.GONE
 
+        homeIcon.setColorFilter(inactive)
         vehiclesIcon.setColorFilter(if (section == Section.VEHICLES) active else inactive)
         chargingIcon.setColorFilter(if (section == Section.CHARGING) active else inactive)
         helpIcon.setColorFilter(if (section == Section.HELP) active else inactive)

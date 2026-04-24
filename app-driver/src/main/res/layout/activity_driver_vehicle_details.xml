@@ -30,7 +30,7 @@
             android:layout_height="36dp"
             android:background="@android:color/transparent"
             android:contentDescription="@string/back"
-            android:src="@android:drawable/ic_media_previous"
+            android:src="@drawable/ic_back_native"
             android:tint="@color/fleet_fg" />
 
         <TextView
@@ -39,7 +39,7 @@
             android:layout_marginStart="8dp"
             android:layout_weight="1"
             android:text="@string/driver_vehicle_details_title"
-            android:textAppearance="@style/TextAppearance.Fleet.Subtitle"
+            android:textAppearance="@style/TextAppearance.Fleet.ScreenTitle"
             android:textColor="@color/fleet_fg" />
     </LinearLayout>
 
@@ -386,10 +386,34 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:paddingHorizontal="10dp"
-        android:weightSum="3"
+        android:weightSum="4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/navHomeIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/bottom_nav_home"
+                android:src="@drawable/ic_nav_home"
+                app:tint="@color/fleet_muted_fg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/bottom_nav_home"
+                android:textAppearance="@style/TextAppearance.Fleet.Caption" />
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/navVehicles"
